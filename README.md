@@ -21,6 +21,8 @@ $ git clone https://github.com/facebookresearch/detectron2.git
 $ pip install -e detectron2
 ```
 
+## Predict
+
 Fetch example image:
 
 ```bash
@@ -31,4 +33,11 @@ Run the example:
 
 ```bash
 $ python example.py
+```
+
+## Train
+
+```bash
+$ wget https://github.com/matterport/Mask_RCNN/releases/download/v2.1/balloon_dataset.zip
+$ unzip balloon_dataset.zip
 ```

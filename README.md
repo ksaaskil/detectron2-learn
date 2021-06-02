@@ -1,10 +1,12 @@
 ## Instructions
 
-Install PyTorch:
+Install dependencies including PyTorch:
 
 ```bash
-$ pip install torch torchvision
+$ pip install -r requirements.txt
 ```
+
+Alternatively, [install PyTorch](https://pytorch.org/get-started/locally/) as required for your use case.
 
 Install Detectron2:
 
@@ -19,11 +21,14 @@ $ git clone https://github.com/facebookresearch/detectron2.git
 $ pip install -e detectron2
 ```
 
-Verify Detectron2 works:
+Fetch example image:
 
 ```bash
-$ cd detectron2/demo
-$ python demo.py --config-file ../configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml \
-  --video-input LeftBag.mp4 \
-  --opts MODEL.WEIGHTS detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl MODEL.DEVICE cpu
+$ wget http://images.cocodataset.org/val2017/000000439715.jpg -q -O input.jpg
+```
+
+Run the example:
+
+```bash
+$ python example.py
 ```

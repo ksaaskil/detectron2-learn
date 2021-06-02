@@ -149,3 +149,4 @@ models/
 *.pkl
 
 .python-version
+out.jpg

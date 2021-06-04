@@ -100,7 +100,7 @@ def get_train_cfg():
     cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url(MODEL_CONFIG)
     cfg.SOLVER.IMS_PER_BATCH = 2
     cfg.SOLVER.BASE_LR = 0.00025  # pick a good LR
-    cfg.SOLVER.MAX_ITER = 1  # 300 iterations seems good enough for this toy dataset; you will need to train longer for a practical dataset
+    cfg.SOLVER.MAX_ITER = 30  # 300 iterations seems good enough for this toy dataset; you will need to train longer for a practical dataset
     cfg.SOLVER.STEPS = []  # do not decay learning rate
     cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = (
         128  # faster, and good enough for this toy dataset (default: 512)
@@ -114,7 +114,7 @@ def get_train_cfg():
 
 
 def train():
-    balloon_metadata = prepare_balloon_metadata()
+    prepare_balloon_metadata()
     visualize_balloon_sample()
 
     cfg = get_train_cfg()
